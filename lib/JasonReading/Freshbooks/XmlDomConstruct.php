@@ -6,7 +6,7 @@ namespace JasonReading\Freshbooks;
  *
  * @AUTHOR TONI VAN DE VOORDE
  */
-class XmlDomConstruct extends DOMDocument {
+class XmlDomConstruct extends \DOMDocument {
 
     /**
      * CONSTRUCTS ELEMENTS AND TEXTS FROM AN ARRAY OR STRING.
@@ -47,7 +47,7 @@ class XmlDomConstruct extends DOMDocument {
      * FROM WHERE THE ARRAY WILL BE CONSTRUCT TO.
      *
      */
-    public function fromMixed($mixed, DOMElement $domElement = null) {
+    public function fromMixed($mixed, \DOMElement $domElement = null) {
 
         $domElement = is_null($domElement) ? $this : $domElement;
 

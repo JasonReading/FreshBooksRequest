@@ -14,8 +14,8 @@ class FreshbooksRequestServiceProvider implements ServiceProviderInterface
             'token' => NULL,
         );
 
-        $app['freshbooks'] = $app->share(function ($app, $command) {
-            FreshBooksRequest::init($app['freshbooks.options']['domain'], $app['freshbooks.options']['token']);
+        $app['freshbooks'] = $app->protect(function ($command) use ($app) {
+            FreshBooksRequest::init($app['freshbooks.domain'], $app['freshbooks.token']);
             $freshbooks = new FreshBooksRequest($command);
             return $freshbooks;
         });
